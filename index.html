@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ToDo-List</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="flexBox">
+            <div class="flexTarea">
+                <div class="nuevaTarea">
+                    <form>
+                        <label for="tituloTarea">Título de la tarea:</label><br>
+                        <input type="text" id="tituloTarea" class="tituloTarea"><br>
+                        <label for="descripcionTarea">Descripción de la tarea:</label><br>
+                        <textarea type="text" id="descripcionTarea" class="descripcionTarea">
+                        </textarea>
+                      </form>
+                </div>
+                <div class="botonesTarea">
+                    <form action="/action_page.php" class="formularioEstado">
+                        <label for="estado">Estado de la tarea: </label>
+                        <select class="estado" id="estadoNuevaTarea">
+                          <option value="todo">To Do</option>
+                          <option value="doing">Doing</option>
+                          <option value="done">Done</option>
+                        </select>
+                      </form><br>
+                    <label for="prioridadTarea" class="labelPrioridad">Prioridad: </label>
+                    <input type="number" id="prioridadTarea" class="prioridadTarea"><br>
+                    <button class="botonAñadirTarea" id="botonAñadirTarea">
+                        Añadir Tarea
+                    </button>
+                </div>
+            </div>
+            <div class="flexListasEstados">
+                <div class="espacioToDo" style="align-self: center;">
+                    <div class="tituloListasEstados">
+                        <span style="font-size: 25px;"> To Do </span>
+                        <!-- <button class="prioTodo" id="prioTodo">
+                            Prioridad
+                        </button> -->
+                    </div>
+                    <div class="listaTodo" id="listaTodo">
+                        <!-- Lista de tareas con estado To Do -->
+                    </div>
+                    <button class="vaciarTodo" id="vaciarTodo">
+                            Vaciar Lista
+                    </button>
+                    
+                </div>
+
+                <div class="espacioDoing" style="align-self: center;">
+                    <div class="tituloListasEstados">
+                        <span style="font-size: 25px;"> Doing </span>
+                        <!-- <button class="prioDoing" id="prioDoing">
+                            Prioridad
+                        </button> -->
+                    </div>
+                    <div class="listaDoing" id="listaDoing">
+                        <!-- Lista de tareas con estado Doing -->
+                    </div>
+                    <button class="vaciarDoing" id="vaciarDoing">
+                            Vaciar Lista
+                    </button>
+                </div>
+
+                <div class="espacioDone" style="align-self: center;">
+                    <div class="tituloListasEstados">
+                        <span style="font-size: 25px;"> Done </span>
+                        <!-- <button class="prioDone" id="prioDone">
+                            Prioridad
+                        </button> -->
+                    </div>
+                    <div class="listaDone" id="listaDone">
+                        <!-- Lista de tareas con estado Done -->
+                    </div>
+                    <button class="vaciarDone" id="vaciarDone">
+                            Vaciar Lista
+                    </button>
+                </div>
+
+                <div class="espacioDeleted" style="align-self: center;">
+                    <div class="tituloListasEstados">
+                        <span style="font-size: 25px;"> Deleted </span>
+                        <!-- <button class="prioDeleted" id="prioDeleted">
+                            Prioridad
+                        </button> -->
+                    </div>
+                    <div class="listaDeleted" id="listaDeleted">
+                        <!-- Lista de tareas con estado Deleted -->
+                    </div>
+                    <button class="vaciarDeleted" id="vaciarDeleted">
+                            Vaciar Lista
+                    </button>
+                </div>
+            </div>
+            <div class="flexListaGeneral">
+                    <span style="font-size: 20px; color: aliceblue;">Lista general de las tareas</span>
+                    <div class="listaGeneral" id="listaGeneral">
+                    </div>
+            </div>
+        </div>
+        <div class="tareaSimple" style="display: none;">
+            <li id="tareaClonar" class="tareaClonar">
+                <div class="cadaTarea">
+                    <span class="TituloMostrar" style="font: bold;"></span>
+                    <p class="DescripcionMostrar" style="margin-left: 5px;"></p>
+                    <p class="EstadoMostrar" style="margin-left: 5px;"></p>
+                    <p class="PrioridadMostrar" style="margin-left: 5px;"></p>
+                </div>
+            </li>
+        </div>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span>¿Estás seguro de vaciar la lista de tareas?</span>
+              <div class="botonesModal">
+                  <button class="seguro" id="seguro">
+                      Si
+                  </button>
+                  <button class="negacion" id="negacion">
+                    No
+                </button>
+              </div>
+            </div>
+          </div>
+
+        <!-- Remove script and main.js file if you dont need javascript -->
+        <script src="Tarea.js" type="text/javascript"></script>
+        <script src="main.js" type="text/javascript"></script>
+    </body>
+</html>
